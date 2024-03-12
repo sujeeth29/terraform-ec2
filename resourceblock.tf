@@ -1,4 +1,4 @@
-/*
+
 resource "aws_security_group" "ec2_sg" {
   name        = "ec2-sg-1"
   description = "terraform-ec2-sg"
@@ -36,10 +36,10 @@ resource "aws_instance" "ec2" {
     instance_type = "t2.micro"
     key_name = "security"
     subnet_id = "subnet-093c04d40cd777b27"
-    
+    security_group = aws_security_group.ec2_sg.id
     tags = {
         Name = "terraform-ec2-1"
     }
 }
-*/
+
 
